@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #282828;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    padding: 5rem 2rem 0;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.slider {
+    max-width: 78rem;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    
+}
+
+.slides {
+    height: 25em;
+    width: 500%;
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s ease-out;
+    margin-bottom: 3rem;
+}
+
+.slide {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: contain;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+}
+
+.subcontent {
+    overflow: hidden;
+    width: 100%;
+}
+
+.text {
+    width: 500%;
+    display: flex;
+    transition: all 0.5s ease-out;
+}
+
+.text p {
+    width: 100%;
+    text-align: left;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 1rem;
+}
+
+input[name="s"] {
+    display: none;
+}
+
+.buttons label {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: #85a740;
+    cursor: pointer;
+    box-shadow: 0px -1px 1px 1px rgb(192,192,192, 0.2) inset;
+}
+.buttons label:hover {
+    background-color: #ed9120;
+    transition: all 0.5s;
+}
+
+#s1:checked ~ .content > .buttons > label[for="s1"] {
+    background-color: transparent;
+    border: 2px solid #85a740;
+    box-shadow: none;
+}
+#s2:checked ~ .content > .buttons > label[for="s2"] {
+    background-color: transparent;
+    border: 2px solid #85a740;
+    box-shadow: none;
+}
+#s3:checked ~ .content > .buttons > label[for="s3"] {
+    background-color: transparent;
+    border: 2px solid #85a740;
+    box-shadow: none;
+}
+#s4:checked ~ .content > .buttons > label[for="s4"] {
+    background-color: transparent;
+    border: 2px solid #85a740;
+    box-shadow: none;
+}
+#s5:checked ~ .content > .buttons > label[for="s5"] {
+    background-color: transparent;
+    border: 2px solid #85a740;
+    box-shadow: none;
+}
+
+#s1:checked ~ .slides {
+    transform: translateX(0);
+}
+#s2:checked ~ .slides {
+    transform: translateX(-20%);
+}
+#s3:checked ~ .slides {
+    transform: translateX(-40%);
+}
+#s4:checked ~ .slides {
+    transform: translateX(-60%);
+}
+#s5:checked ~ .slides {
+    transform: translateX(-80%);
+}
+
+#s1:checked ~ .content > .subcontent > .text {
+    transform: translateX(0);
+}
+#s2:checked ~ .content > .subcontent > .text {
+    transform: translateX(-20%);
+}
+#s3:checked ~ .content > .subcontent > .text {
+    transform: translateX(-40%);
+}
+#s4:checked ~ .content > .subcontent > .text {
+    transform: translateX(-60%);
+}
+#s5:checked ~ .content > .subcontent > .text {
+    transform: translateX(-80%);
+}
+
+@media (max-width: 767px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 3rem;
+    }
+    .text p {
+        text-align: center;
+    }
+}
