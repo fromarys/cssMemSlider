@@ -43,7 +43,7 @@ input[name="s"] {
 .slide {
     width: 100%;
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 1rem;
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -88,7 +88,7 @@ input[name="s"] {
     border-radius: 1rem;
     background-color: #85a740;
     cursor: pointer;
-    box-shadow: 0px -1px 1px 1px rgb(192,192,192, 0.2) inset;
+    box-shadow: 0 -0.1rem 0.1rem 0.1rem rgb(192,192,192, 0.2) inset;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,7 +112,7 @@ input[name="s"] {
 #s4:checked ~ .content > .buttons > label[for="s4"], 
 #s5:checked ~ .content > .buttons > label[for="s5"] {
     background-color: transparent;
-    border: 2px solid #85a740;
+    border: 0.2rem solid #85a740;
     box-shadow: none;
 }
 
@@ -121,7 +121,7 @@ input[name="s"] {
 #s3:checked ~ .content > .buttons > label[for="s3"]:hover, 
 #s4:checked ~ .content > .buttons > label[for="s4"]:hover, 
 #s5:checked ~ .content > .buttons > label[for="s5"]:hover  {
-    border: 2px solid #ed9120;
+    border: 0.2rem solid #ed9120;
 }
 
 #s1:checked ~ .slides {
