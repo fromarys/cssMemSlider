@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #282828;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    padding: 3.125rem 1.25rem 0;
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+input[name="s"] {
+    display: none;
+}
+
+.slider {
+    max-width: 48.75rem;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    
+}
+
+.slides {
+    height: 32.5rem;
+    width: 500%;
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s ease-out;
+    margin-bottom: 1.875rem;
+}
+
+.slide {
+    width: 100%;
+    padding: 0.938rem;
+    border-radius: 0.625rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.625rem;
+    object-fit: contain;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+}
+
+.subcontent {
+    overflow: hidden;
+    width: 100%;
+}
+
+.text {
+    width: 500%;
+    display: flex;
+    transition: all 0.5s ease-out;
+}
+
+.text p {
+    width: 100%;
+    text-align: left;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 0.625rem;
+    height: 2.5rem;
+}
+
+.buttons label {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.625rem;
+    background-color: #85a740;
+    cursor: pointer;
+    box-shadow: 0 -0.063rem 0.063rem 0.063rem rgb(192,192,192, 0.2) inset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons label span {
+    width: 0.688rem;
+    height: 0.938rem;
+    padding: 2.5rem 0.75rem;
+}
+
+
+.buttons label:hover {
+    background-color: #ed9120;
+    transition: all 0.5s;
+}
+
+.buttons label:active {
+    background-color: #dbddc8;
+    transition: all 0.2s;
+}
+
+#s1:checked ~ .content > .buttons > label[for="s1"], 
+#s2:checked ~ .content > .buttons > label[for="s2"], 
+#s3:checked ~ .content > .buttons > label[for="s3"], 
+#s4:checked ~ .content > .buttons > label[for="s4"], 
+#s5:checked ~ .content > .buttons > label[for="s5"] {
+    background-color: transparent;
+    border: 0.2rem solid #85a740;
+    box-shadow: none;
+}
+
+#s1:checked ~ .content > .buttons > label[for="s1"]:hover, 
+#s2:checked ~ .content > .buttons > label[for="s2"]:hover, 
+#s3:checked ~ .content > .buttons > label[for="s3"]:hover, 
+#s4:checked ~ .content > .buttons > label[for="s4"]:hover, 
+#s5:checked ~ .content > .buttons > label[for="s5"]:hover  {
+    border: 0.2rem solid #ed9120;
+}
+
+#s1:checked ~ .slides {
+    transform: translateX(0);
+}
+#s2:checked ~ .slides {
+    transform: translateX(-20%);
+}
+#s3:checked ~ .slides {
+    transform: translateX(-40%);
+}
+#s4:checked ~ .slides {
+    transform: translateX(-60%);
+}
+#s5:checked ~ .slides {
+    transform: translateX(-80%);
+}
+
+#s1:checked ~ .content > .subcontent > .text {
+    transform: translateX(0);
+}
+#s2:checked ~ .content > .subcontent > .text {
+    transform: translateX(-20%);
+}
+#s3:checked ~ .content > .subcontent > .text {
+    transform: translateX(-40%);
+}
+#s4:checked ~ .content > .subcontent > .text {
+    transform: translateX(-60%);
+}
+#s5:checked ~ .content > .subcontent > .text {
+    transform: translateX(-80%);
+}
+
+@media (max-width: 768px) {
+    .slides {
+        height: 49rem;
+        margin-bottom: 2rem;
+    }
+    .content {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+@media (max-width: 426px) {
+    .slides {
+        height: 26rem;
+    }
+}
+
+@media (max-width: 376px) {
+    .slides {
+        height: 23rem;
+    }
+}
+
+@media (max-width: 321px) {
+    .slides {
+        height: 19rem;
+    }
+}
